@@ -1,0 +1,41 @@
+<div class="container">
+
+  <div class=" col text-center top-logo">
+
+    <img src="assets/img/logo.png" class="img-fluid">
+  </div>
+
+
+  <div class="row justify-content-center ">
+    <div class="text-center toptxt">
+Login
+</div>
+  </div>
+  <div row justify-content-center >
+  <div class="col-md-8 mx-auto navbar-custom">
+
+    <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" formControlName="username" class="form-control" placeholder="username"
+         id="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+          <div *ngIf="f.username.errors.required">Username is required</div>
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 4 characters</div>
+        </div>
+      </div>
+      <div class="form-group ">
+        <button type="submit"  class="btn btn-primary">Submit</button>
+      </div>
+<div style="color:#FF0000;font-weight:bold;font-size:1rem">{{ infomessage }}</div>
+    </form>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <button mat-button [matMenuTriggerFor]="orderMenu" class="frstorderbtn">Orders</button>
+  <mat-menu #orderMenu="matMenu" yPosition="below">
+    <button (click)="neworder()" mat-menu-item>New Order</button>
+    <button (click)="orderlist()" mat-menu-item>Order List</button>
+    <button (click)="deliveredOrders()" mat-menu-item>Delivered</button>
+    <button (click)="undeliveredOrders()" mat-menu-item>Undelivered</button>
+    <button (click)="checkedOrders()" mat-menu-item>Checked</button>
+  </mat-menu>
+
+<button mat-button class="scndorderbtn" [matMenuTriggerFor]="usersMenu">Users</button>
+<mat-menu  #usersMenu="matMenu" yPosition="below" >
+  <button (click)="newuser()" mat-menu-item>New User</button>
+  <button (click)="userslist()" mat-menu-item>User List</button>
+</mat-menu>
+<span class="fill-space"></span>
+
+<button (click)="refresh()" mat-button class="thrdorderbtn">Refresh</button>
+<button (click)="logout()" mat-button class="thrdorderbtn">Logout</button>
+</mat-toolbar>

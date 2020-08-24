@@ -1,0 +1,29 @@
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input
+      type="file"
+      #avatar
+      name="avatar"
+      style="display:none"
+      (change)="onFileSelect($event)"
+    />
+
+    <button class="btn btn-info" (click)="avatar.click()" type="button">
+      Choose File
+    </button>
+    <button
+      class="btn btn-warning"
+      style="margin-left:20px"
+
+      (click)="onFileUpload()"
+    >
+    Upload
+    </button>
+
+  <mat-progress-bar style="margin-top: 1rem;"  mode="determinate" [value]="progress"></mat-progress-bar>
+    <div>{{ progressMessage }}   {{ imgName }} </div>
+  </form>
+  <div *ngIf="uploadResponse && uploadResponse.status === 'error'">File Not Uploaded</div>
+
+</div>
+

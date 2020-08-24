@@ -1,0 +1,82 @@
+<app-navdriver (parentFun)="refresh()"></app-navdriver>
+<div>
+
+  <mat-card
+  style="font-family:Arial, Helvetica, sans-serif!important;"
+  class="mat-elevation-z15"
+  fxFlex
+>
+
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    *ngIf="dataSource.data.length > 0"
+    class="mat-elevation-z8 orders_tbl"
+
+  >
+  <ng-container matColumnDef="priority">
+    <th mat-header-cell *matHeaderCellDef>Priority</th>
+    <td mat-cell *matCellDef="let element">{{ element.priority }}</td>
+  </ng-container>
+  <ng-container matColumnDef="num">
+    <th mat-header-cell *matHeaderCellDef>Number</th>
+    <td mat-cell *matCellDef="let element">{{ element.number }}</td>
+  </ng-container>
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef>Phone</th>
+      <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="postcode">
+      <th mat-header-cell *matHeaderCellDef>Post Code</th>
+      <td mat-cell *matCellDef="let element">{{ element.postcode }}</td>
+    </ng-container>
+    <ng-container matColumnDef="actions1">
+      <th mat-header-cell id="edit" *matHeaderCellDef>Details
+
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <i class="fa fa-info-circle detailsicon" (click)="details(element.id)"></i>
+        <button  mat-raised-button class="detailsbtn" (click)="details(element.id)" color="primary">Details</button>
+
+      </td>
+
+    </ng-container>
+    <ng-container matColumnDef="actions2">
+      <th mat-header-cell id="edit" style="margin-left:15px" *matHeaderCellDef>Delivered</th>
+      <td mat-cell *matCellDef="let element">
+          <i class="fa fa-truck editicon" style="margin-left:10px" (click)="deliver(element.id)"></i>
+
+        <button mat-raised-button style="margin-left:15px"  class="editbtn" color="warn"  (click)="deliver(element.id)">
+
+          Delivered</button>
+
+      </td>
+
+    </ng-container>
+
+
+    this.isLoading = false;
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <div style="padding-left:40%">
+    <mat-progress-spinner
+    *ngIf="isLoading"
+      color="primary"
+      mode="indeterminate">
+    </mat-progress-spinner>
+ </div>
+
+  <mat-paginator
+    [pageSizeOptions]="[ 10, 15, 20]"
+    showFirstLastButtons
+
+  ></mat-paginator>
+  <div style="color:red;text-align: center;" *ngIf="message !==''"><h3>{{message}}</h3></div>
+</mat-card>
+</div>
+
+
+

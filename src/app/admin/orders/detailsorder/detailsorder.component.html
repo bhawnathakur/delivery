@@ -1,0 +1,95 @@
+
+<div class="container">
+  <form  [formGroup]="orderForm" >
+  <div class="row" >
+    <div class="col-md-6 ">
+      <mat-card class="example-card">
+        <mat-card-header>
+
+          <button mat-raised-button (click)="goBack()" color="warn">Go Back</button>
+
+        </mat-card-header>
+         <mat-card-content>
+
+            <div class="form-group">
+              <label for="username">Number:</label>
+              <input type="text" readonly formControlName="num" class="form-control " >
+
+            </div>
+            <div class="form-group">
+              <label for="username">Priority:</label>
+              <input type="text" readonly formControlName="priority" class="form-control " >
+
+            </div>
+            <div class="form-group">
+              <label for="username">Name:</label>
+              <input type="text" readonly formControlName="ordername" class="form-control">
+
+            </div>
+            <div class="form-group">
+              <label for="username">Address:</label>
+              <textarea type="text" readonly formControlName="address" class="form-control"> </textarea>
+
+            </div>
+
+
+
+
+
+        </mat-card-content>
+        <mat-card-actions>
+
+        </mat-card-actions>
+      </mat-card>
+
+     </div>
+
+     <div class="col-md-6 ">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Details</mat-card-title>
+
+
+      </mat-card-header>
+         <mat-card-content>
+          <div class="form-group">
+            <label for="username">Phone:</label>
+            <input type="text" readonly formControlName="phone" class="form-control">
+
+          </div>
+          <div class="form-group">
+            <label for="username">Driver:</label>
+            <input type="text" readonly formControlName="driver" class="form-control">
+
+          </div>
+          <div class="form-group">
+            <label for="info">Driver Comments:</label>
+            <textarea readonly type="text" formControlName="drivercomments" class="form-control"
+             id="drivercomments" > </textarea>
+
+          </div>
+            <div class="form-group">
+              <label for="username">Delivered:</label>
+              <input type="text" readonly formControlName="delivered" class="form-control " >
+
+            </div>
+            <div class="form-group">
+              <label for="username">Date / Time:</label>
+              <input type="text" readonly formControlName="datetime" class="form-control">
+
+            </div>
+
+
+
+        </mat-card-content>
+        <mat-card-actions>
+
+        </mat-card-actions>
+      </mat-card>
+
+     </div>
+
+</div>
+</form>
+</div>
+

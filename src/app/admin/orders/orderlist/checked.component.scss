@@ -1,0 +1,145 @@
+.orders_tbl {
+  width: 100%;
+}
+.deletebtn,.editbtn{
+  display:block
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.inpt{
+  max-width:60px;
+  margin-right:4px;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.mat-column-num,
+.mat-column-postcode,
+.mat-column-driver,
+
+.mat-column-status
+
+  {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 16% !important;
+    width: 16% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    word-break: break-word;
+
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+  .mat-column-check
+
+  {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 12% !important;
+    width: 12% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    word-break: break-word;
+
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+.mat-column-priority
+
+  {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 12% !important;
+    width: 12% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    word-break: break-word;
+
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+  .prio{
+    margin-right:4px;
+  }
+.deleteicon,.editicon{
+  display:none;
+}
+.users_tbl {
+  width: 100%;
+}
+
+.placeholder {
+  color: red;
+  font-size: 15px;
+  }
+  .thumbnail img {
+    width: 25px;
+    height: 25px;
+  }
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.mobile-label {
+  display: none;
+}
+
+@media(max-width: 500px) {
+  .mobile-label {
+    width: 120px;
+    display: inline-block;
+
+  }
+  .input-group-text{
+    padding:.1rem .1rem !important;
+  }
+
+  .deleteicon,.editicon {
+    display: block;
+  }
+  .deleteicon {
+    margin-left:.7rem;
+  }
+  .deletebtn,.editbtn ,#edit,#delete {
+    display:none
+  }
+  .inpt,
+  .mat-column-priority,
+  .mat-column-num,
+  .mat-column-postcode,
+  .mat-column-driver,
+  .mat-column-status
+   {
+  font-size: 10px !important;
+}
+  .mat-row {
+    flex-direction: column;
+    align-items: start;
+    padding: 8px 24px;
+  }
+}

@@ -1,0 +1,21 @@
+<div mat-dialog-content style="overflow-y: hidden;">
+    <p>Are you sure you have checked the order</p>
+  
+      <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      [(ngModel)]="dialogresult">
+      <mat-radio-button [checked]="true" class="example-radio-button"  value="yes">
+       Yes
+      </mat-radio-button>
+      <br>
+      <mat-radio-button  class="example-radio-button"  value="no">
+       No
+       </mat-radio-button>
+    </mat-radio-group>
+  
+  </div>
+  <div mat-dialog-actions>
+  
+    <button mat-button (click)="close()" cdkFocusInitial>Ok</button>
+  </div>
